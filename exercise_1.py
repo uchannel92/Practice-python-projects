@@ -1,26 +1,24 @@
-def when_will_you_turn_onehundred(name, age, hundrdyearsofage=100, year=2022):
+def when_will_you_turn_onehundred(hundrdyearsofage=100, year=2022):
 	""" Function will let you know what year you will turn 100 """
 
-	calculate_year_born = year - age
-	year_when_100 = calculate_year_born + hundrdyearsofage
+	year_when_100 = ''
 
-	answer = f'Hello {name}, you are {age}.\nYou will be 100 in the year {year_when_100}!'
-	print(answer)
-	print(year_when_100)
+	while True:
+
+		question = input('Is there another person behind? y/n: ')
+
+		if question == 'n':
+			break
+
+		elif question == 'y':
+
+			name = input('What is your name?: ')
+			age = int(input('What is your age?: '))
+			calculate_year_born = year - age
+			year_when_100 = calculate_year_born + hundrdyearsofage
+
+			print(year_when_100)
 	return year_when_100
 
-
-while True:	
-
-	question_name = input('What is your name? : ')
-	question_age = int(input('What is your age?: '))
-
-	my_answer = when_will_you_turn_onehundred(
-		question_name, 
-		question_age
-	)
-
-	final_question = input('Is there another person behind? y/n')
-
-	if final_question == 'n':
-		break
+# When running test, commenr out function.
+#when_will_you_turn_onehundred()

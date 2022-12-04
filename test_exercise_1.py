@@ -7,7 +7,7 @@ class TestWhenAgeIsOneHundred(unittest.TestCase):
 	def test_when_will_you_turn_onehundred(self):
 		""" will the age 30 show 2092? """
 
-		test_answer = turn_hun('john_doe', 30)
+		test_answer = turn_hun()
 		self.assertEqual(test_answer, 2092)
 
 if __name__ == '__main__':
