@@ -1,19 +1,15 @@
-def when_will_you_turn_onehundred(hundrdyearsofage=100, year=2022):
-	""" Function will let you know what year you will turn 100 """
+def is_odd_or_even():
 
-	while True:
+	number_request = int(input('Enter a number please :) : '))
 
-		name = input('What is your name?: ')
-		age = int(input('What is your age?: '))
-		calculate_year_born = year - age
-		year_when_100 = calculate_year_born + hundrdyearsofage
-		print(year_when_100)
+	if number_request % 4 == 0 and number_request % 2 == 0:
+		print('divisible by 4')
+		print('also even')
 
-		final_question = input('Is there another person behind? y/n')
+	elif number_request % 2 == 0:
+		print('even')
 
-		if final_question == 'n':
-			break
+	elif number_request % 2 == 1:
+		print('odd')
 
-	return f'{name} {year_when_100}'
-
-when_will_you_turn_onehundred()
+is_odd_or_even()
