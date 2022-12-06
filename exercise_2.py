@@ -1,15 +1,28 @@
-def is_odd_or_even():
+def is_odd_or_even(number):
 
-	number_request = int(input('Enter a number please :) : '))
 
-	if number_request % 4 == 0 and number_request % 2 == 0:
-		print('divisible by 4')
-		print('also even')
+	if number % 4 == 0 and number % 2 == 0:
+		return 'divisible by four, and also even'
 
-	elif number_request % 2 == 0:
-		print('even')
+	elif number % 2 == 0 and number % 4 != 0:
+		return 'even'
 
-	elif number_request % 2 == 1:
-		print('odd')
+	elif number % 2 == 1:
+		return 'odd'
 
-is_odd_or_even()
+num_check = is_odd_or_even(40)
+print(num_check)
+
+def is_odd_or_even_dbl_input(input_one, input_two):
+
+	num = input_one
+	check = input_two
+	result = num / check
+
+	if result % 2 == 0:
+		return 'even'
+	else:
+		return 'odd'
+
+
+#is_odd_or_even_dbl_input(8, 2)
