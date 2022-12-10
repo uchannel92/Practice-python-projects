@@ -3,7 +3,7 @@ filename = 'runners.txt'
 with open(filename, 'r') as f:
 	running_data = f.readlines()
 
-#print(running_data)
+print(running_data)
 runners = []
 
 for runner_data in running_data:
