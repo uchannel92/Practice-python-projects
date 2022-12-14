@@ -56,22 +56,26 @@ def write_file(formatted_list, new_filename):
 # I've hard coded the file names in your spec. So what you want to do is maybe
 # change filename and newfilename into 'inputs' so you can manually type the filenames your lecturer has asked. 
 def process_data():
-
-    filename = 'all_running_times.txt'
-    new_filename = 'sorted_race_results.txt'
    
     while True:
+        # enter the filename you want processed, then prompted to conifirm the New filename.
+        prompt = input('Enter any key to continue or enter "X" to exit: ')
 
-        prompt = input('Enter the filename or enter "X" to exit: ')
-       
-        # Declare as a variable, and then return that value.
-        if prompt == 'all_running_times.txt':
-            athletes_list = read_file(filename)
-            formatted_list = get_max_min_avg(athletes_list)
-            write_file(formatted_list, new_filename)
+        if prompt == 'X':
             break
 
-        elif prompt == 'X':
-            break
+        else:
+
+            filename = input('Enter the filename to process: ')
+            new_filename = input('Enter the processed filename: ')
+           
+            # Declare as a variable, and then return that value.
+            if filename:
+                athletes_list = read_file(filename)
+                formatted_list = get_max_min_avg(athletes_list)
+                write_file(formatted_list, new_filename)
+                continue
+
+        
    
 process_data()
