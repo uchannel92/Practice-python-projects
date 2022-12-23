@@ -1,8 +1,5 @@
 from random import randint
 
-list_one = [3, 5, 1, 6]
-computer = [3, 5, 2, 6]
-
 random_numbers = str(randint(1000,9999))
 random_numbers_list = [int(value) for value in random_numbers]
 
