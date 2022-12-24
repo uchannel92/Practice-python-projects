@@ -14,4 +14,5 @@ def convert_input_to_lists(my_input):
 	print(string_list)
 	print(float_list)
 
-convert_input_to_lists('namn1:namn2:4:2:3')
+# add data here
+convert_input_to_lists()

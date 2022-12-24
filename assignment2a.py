@@ -7,4 +7,5 @@ def convert_input_to_float(my_input):
 	return floats
 
 
-convert_input_to_float('5:100:24:13:70')
+# add data here
+convert_input_to_float()

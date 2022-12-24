@@ -6,5 +6,5 @@ def convert_input_to_list(my_input):
 	return arr
 
 
-
-convert_input_to_list('5:100:24')
+# add data here
+convert_input_to_list()
