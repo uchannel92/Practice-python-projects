@@ -1,62 +1,85 @@
-# "Read in a string containing a number of numbers separated by colons (:). 
-# Split the character string at each colon character and put each part into a common list. 
-# Feel free to use 'split()' for this. Then print this list."
-
 # Test strings to use
-test = '5:2:4'
-test_2 = '5:100:24'
-test_3 = '5:100:24:13:70'
-string_int = 'namn1:namn2:4:2:3'
-string_int_2 = 'a:b:9:8:6:5'
+# test_1 = '5:2:4'
+# test_2 = '5:100:24'
+# test_3 = '5:100:24:13:70'
+# test_4 = 'namn1:namn2:4:2:3'
+# test_5 = 'a:b:9:8:6:5'
 
+
+# Function determines the number of elements that will be added to a list.
+def input_counter():
+
+    
+    prompt = """\nSelect the option (1/2/3) to deterime the number of inputs you require (This determines list length):\n1) Small (3)\n2) Medium (6)\n3) Large (8)\n: """
+    question = input(prompt)
+    list_length, string = '', ''
+    
+    if question == '1':
+        list_length = 3
+    elif question == '2':
+        list_length = 6
+    elif question == '3':
+        list_length = 8
+        
+    for inputs in range(list_length):
+        question_2 = input('add an input: ')
+        string = string + question_2 + ':'
+        
+    return string
+
+
+# converts string input into a list with a colon after each string.
 def convert_input_to_list(my_input):
 
-	 print(my_input.split(':'))
+	 print(my_input.split(':')[:-1])
 
 
-input_test = convert_input_to_list(test)
-input_test_2 = convert_input_to_list(test_2)
-print('\n')
 
-# "Read in a string containing a number of numbers separated by colons (:). 
-# Split the character string at each colon character and put each part into a common list. 
-# Convert each element of the list to a floating point number. Then print this list."
-
+# enter a number and the function will convert to a float data type
 def convert_input_to_float(my_input):
 
-	format_list = my_input.split(':')
-	floats = [int(value) for value in format_list]
+	format_list = my_input.split(':')[:-1]
+	floats = [float(value) for value in format_list]
 	print(floats)
 
 
-float_conversion_test = convert_input_to_float(test)
-float_conversion_test_2 = convert_input_to_float(test_3)
-print('\n')
-
-# Build on the code from the previous task. Read in a string. 
-# Break this up at each colon character and add each part to a list. 
-# Pick out the first two elements in the list in a separate list, and pick out the remaining elements in another list. 
-# Convert all elements of the latter list to floating-point numbers and print both lists on a separate line."
-
+# splits strings to 2 separate lists - a string and float list.
 def convert_input_to_lists(my_input):
 
-	format_list = my_input.split(':')
+	format_list = my_input.split(':')[:-1]
 	string_list, float_list  = [], []
 
-	for index, value in enumerate(format_list):
-		
-		if index > 1:
+	for value in format_list:
+		try:
 			convert_to_float = float(value)
-			float_list.append(convert_to_float)
+		except ValueError:
+			string_list.append(value)
 		else:
-			convert_to_str = str(value)
-			string_list.append(convert_to_str)
+			float_list.append(convert_to_float)
 
 	print(string_list)
 	print(float_list)
-	print('\n')
 
 
-string_int_test = convert_input_to_lists(string_int)
-string_int_test_2 = convert_input_to_lists(string_int_2)
+# To determine which function runs, select from the following options prompted by the question.
+def process_data():
 
+	prompt = input('Select the assignment you want to test:\n1) Convert to list\n2) Convert to float\n3) Convert to float and string: ')
+
+
+	if prompt == '1':
+		my_input = input_counter()
+		convert_input_to_list(my_input)
+
+	elif prompt == '2':
+		my_input = input_counter()
+		convert_input_to_float(my_input)
+
+	elif prompt == '3':
+		my_input = input_counter()
+		convert_input_to_lists(my_input)
+
+	else:
+		print('You have not selected a valid option')
+
+process_data()
