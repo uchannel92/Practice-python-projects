@@ -34,7 +34,6 @@ def convert_input_to_list(my_input):
 	 print(my_input.split(':')[:-1])
 
 
-
 # enter a number and the function will convert to a float data type
 def convert_input_to_float(my_input):
 
