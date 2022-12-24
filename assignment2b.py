@@ -1,3 +1,6 @@
+# Paste values here i.e namn12:ruben12:15:100 etc..
+a = input()
+
 def convert_input_to_lists(my_input):
 
 	format_list = my_input.split(':')[:-1]
@@ -14,5 +17,5 @@ def convert_input_to_lists(my_input):
 	print(string_list)
 	print(float_list)
 
-# add data here
-convert_input_to_lists()
+
+convert_input_to_lists(a)
