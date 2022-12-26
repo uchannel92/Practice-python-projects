@@ -3,7 +3,7 @@ a = input()
 
 def convert_input_to_lists(my_input):
 
-	format_list = my_input.split(':')[:-1]
+	format_list = my_input.split(':')
 	string_list, float_list  = [], []
 
 	for value in format_list:

@@ -5,6 +5,7 @@
 # Change function argument to number list
 
 filename = 'primes.txt'
+filename_two = 'happy.txt'
 
 numbers = list(range(1,1001))
 primes = []
@@ -22,6 +23,11 @@ def is_number_prime_optimised(numbers, primes):
         if result:
             primes.append(is_prime)
     print(primes)
+
+
+
+def is_number_happy_number():
+    pass
 
 
 prime_number_check = is_number_prime_optimised(numbers[1:], primes)
