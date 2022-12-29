@@ -16,16 +16,16 @@ def sort_list(numbers):
 	sorted_list =  sorted(numbers)
 	list_stats = {
 		'smallest_to_largest': sorted_list,
-		'mean': format(sum(numbers) / len(numbers), '.1f'),
-		'smallest': sorted_list[0],
-		'largest': sorted_list[-1],
+		'mean': format(sum(numbers) / len(numbers), '.2f'),
+		'smallest': format(sorted_list[0], '.2f'),
+		'largest': format(sorted_list[-1], '.2f'),
 	}
 
 	# highest to lowest
-	print(list_stats['smallest_to_largest'])
-	print(list_stats['mean'])
-	print(list_stats['smallest'])
-	print(list_stats['largest'])
+	print(f"resultat:{list_stats['smallest_to_largest']}")
+	print(f"snitt:{(list_stats['mean'])}")
+	print(f"min:{list_stats['smallest']}")
+	print(f"max:{list_stats['largest']}")
 
 
 while True:
