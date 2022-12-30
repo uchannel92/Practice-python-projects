@@ -68,5 +68,3 @@ if __name__ == '__main__':
 		else:
 		    exam_result = enter_exam_result(user_input)
 		    find_your_grade = get_grade(exam_result)
-		    
-	print('Done')
