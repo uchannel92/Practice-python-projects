@@ -47,7 +47,7 @@ def print_list(encrypted_word):
     return ' '.join(encrypted_word)
 
 
-the_random_word = add_random_word('alphabet')
+the_random_word = add_random_word('plum')
 word_encryption = encrypt_random_word(the_random_word, encrypted_word)
 
 
