@@ -17,6 +17,15 @@ def input_a_letter(letters_used):
     return format_letter
 
 # pull random word from the sowpads.txt file
+
+def get_word_less_than_five_characters():
+    word = add_random_word()
+
+    while len(word) > 6:
+        word = add_random_word()
+
+    return word
+
 def add_random_word():
     filename = 'sowpads.txt'
     with open(filename, 'r') as f:
@@ -52,7 +61,7 @@ def hangman_letter(guess, word, encrypted_word):
 
 
 def print_list(encrypted_word):
-    return ' '.join(encrypted_word)
+    return ''.join(encrypted_word)
 
 # function to check game is over
 def check_if_game_over(user_answer, word ,attempts):
@@ -64,18 +73,21 @@ def check_if_game_over(user_answer, word ,attempts):
         attempts = attempts - 1
         return attempts
 
-the_random_word = add_random_word()
+the_random_word = get_word_less_than_five_characters()
 word_encryption = encrypt_random_word(the_random_word, encrypted_word)
 
 
 print('>>> Welcome to Hangman!')
+print(f'Word is {len(encrypted_word)} letters')
 while is_game_over:
 
     encrypted_string = print_list(encrypted_word)
     print(encrypted_string)
+    print(f'Letters used: {letters_used}')
 
     if the_random_word == ''.join(encrypted_word):
-        print('Game over')
+        print('Winner!')
+        print(f'The word was {the_random_word}')
         is_game_over = False
 
     else:
@@ -83,12 +95,7 @@ while is_game_over:
         start_game = hangman_letter(user_letter_guess, the_random_word, word_encryption)
         value_check = check_if_game_over(user_letter_guess, the_random_word, attempts)
         attempts = value_check
-
         if attempts == 0:
             print('Game over!')
             print(f'The word was {the_random_word}')
             is_game_over = False
-
-
-
-    
